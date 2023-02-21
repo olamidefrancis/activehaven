@@ -10,6 +10,7 @@ import Register from './Components/Register/Register';
 import Form from './Components/Form/Form';
 import 'tachyons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Components/Home/Home';
 
 class App extends Component {
   constructor() {
@@ -52,6 +53,12 @@ class App extends Component {
         ) : (
           (this.setState = { route: 'home' })
         )}
+
+        <Router>
+          <Routes>
+            <Route path='/home' element={<Home />} />
+          </Routes>
+        </Router>
       </div>
     );
   }
