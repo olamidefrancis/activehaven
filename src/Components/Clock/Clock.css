@@ -1,0 +1,48 @@
+.clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.start{
+ 
+    width: 60px;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.end{
+    margin-left: auto;
+    width: 60px;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 10px;
+}
+.hours{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    border-radius: 0%;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1;
+   
+    margin-top:6px; 
+    
+    background-color: rgb(13, 178, 219);
+   
+    height: fit-content;
+
+}
+.in{
+    border:none;
+    border-bottom: 1px solid rgb(46, 45, 45);
+    outline: none;
+    width: 100%;
+    
+}

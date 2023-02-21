@@ -1,0 +1,63 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1;
+    grid-gap: 10px; 
+    margin-top:6px; 
+    padding: 5px 5px; 
+    background-color: rgb(219, 188, 13);
+   
+    height: 200px;
+
+}
+.location{
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+
+.services{
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+
+}
+
+.akoni{
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+}
+.po{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    
+}
+
+.blockcenter{
+    display: block;
+    text-align: center;
+    height: fit-content;
+   
+    
+}
+.flat{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ser{
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+   font-size: 1.2rem;
+}
+.try{
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
