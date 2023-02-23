@@ -3,6 +3,9 @@ import { Box } from '@mui/material';
 
 const HomeContainer = styled(Box)`
   width: 100%;
+  .MuiTypography-root {
+    font-family: 'Inter', sans-serif;
+  }
   .MuiButton-root {
     text-transform: none;
     background: #e0c13e;

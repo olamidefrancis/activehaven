@@ -3,6 +3,9 @@ import { Box } from '@mui/material';
 
 const ClockContainer = styled(Box)`
   width: 100%;
+  .MuiTypography-root {
+    font-family: 'Inter', sans-serif;
+  }
 `;
 
 const TextfieldBox = styled(Box)`

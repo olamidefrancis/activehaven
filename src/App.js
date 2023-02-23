@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Clock from './Components/Clock';
 import Signin from './Components/Signin';
-import Form from './Components/Form/Form';
+import Form from './Components/Form';
 import 'tachyons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
@@ -23,10 +23,6 @@ class App extends Component {
       .then((response) => response.json())
       .then(console.log);
   }
-
-  onRouteChange = (route) => {
-    this.setState({ route: route });
-  };
 
   render() {
     return (

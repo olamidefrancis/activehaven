@@ -115,6 +115,7 @@ const Signup = () => {
           value={values.name}
           onChange={handleChange('name')}
           type='text'
+          required
         />
       </TextfieldBox>
       <TextfieldBox>
@@ -128,6 +129,7 @@ const Signup = () => {
           value={values.email}
           onChange={handleChange('email')}
           type='email'
+          required
         />
       </TextfieldBox>
       <TextfieldBox>
@@ -141,6 +143,7 @@ const Signup = () => {
           value={values.phone}
           onChange={handleChange('phone')}
           type='email'
+          required
         />
       </TextfieldBox>
       <TextfieldBox>
@@ -154,6 +157,7 @@ const Signup = () => {
           value={values.age}
           onChange={handleChange('age')}
           type='email'
+          required
         />
       </TextfieldBox>
 
@@ -169,6 +173,7 @@ const Signup = () => {
             name='password'
             value={values.password}
             onChange={handleChange('password')}
+            required
             endAdornment={
               <InputAdornment position='end'>
                 <IconButton

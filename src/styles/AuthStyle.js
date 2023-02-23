@@ -6,7 +6,9 @@ const AuthContainer = styled(Box)`
   max-width: 600px;
   margin: 0 auto;
   padding: 3rem 1rem;
-
+  .MuiTypography-root {
+    font-family: 'Inter', sans-serif;
+  }
   @media (min-width: 600px) {
     padding: 3rem 2rem;
   }
