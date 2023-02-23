@@ -17,12 +17,21 @@ import BannerContent from './BannerContent';
 
 const Home = () => {
   const year = new Date().getFullYear();
+  const isLoggedIn = localStorage.getItem('activeUser');
+  const handleClick = () => {
+    if (isLoggedIn) {
+      localStorage.clear();
+      window.location.reload();
+    } else {
+      window.location.href = '/signin';
+    }
+  };
   return (
     <HomeContainer>
       <TopBar display='flex' justifyContent='space-between' alignItems='center'>
         <img src={logo} alt='logo' />
-        <Button variant='contained' color='primary'>
-          Staff Signin
+        <Button variant='contained' onClick={handleClick}>
+          {isLoggedIn ? 'Sign Out' : 'Staff Signin'}
         </Button>
       </TopBar>
       <BannerContent />

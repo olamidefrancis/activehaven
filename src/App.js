@@ -1,12 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
-import Navigation from './Components/Navigation/Navigation';
-import Application from './Components/Application/Application';
-// import Slide from './Components/Slide/Slide';
-import Contacts from './Components/Contacts/Contacts';
-import Clock from './Components/Clock/Clock';
+
+import Clock from './Components/Clock';
 import Signin from './Components/Signin';
-import Register from './Components/Register/Register';
 import Form from './Components/Form/Form';
 import 'tachyons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -35,31 +31,13 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        {/* {this.state.route === 'home' ? (
-          <div>
-            <Navigation onRouteChange={this.onRouteChange} />
-            <Slide />
-            <Application onRouteChange={this.onRouteChange} />
-            <Contacts />
-          </div>
-        ) : this.state.route === 'form' ? (
-          <Form onRouteChange={this.onRouteChange} />
-        ) : this.state.route === 'stafflog' ? (
-          <div>
-            <Signin onRouteChange={this.onRouteChange} />
-            <Register onRouteChange={this.onRouteChange} />
-          </div>
-        ) : this.state.route === 'clock' ? (
-          <Clock onRouteChange={this.onRouteChange} />
-        ) : (
-          (this.setState = { route: 'home' })
-        )} */}
-
         <Router>
           <Routes>
-            <Route path='home' element={<Home />} />
+            <Route path='/' index exact element={<Home />} />
             <Route path='signin' element={<Signin />} />
             <Route path='signup' element={<Signup />} />
+            <Route path='clock' element={<Clock />} />
+            <Route path='support' element={<Form />} />
           </Routes>
         </Router>
       </div>

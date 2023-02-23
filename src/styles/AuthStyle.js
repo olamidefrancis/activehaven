@@ -17,6 +17,7 @@ const AuthContainer = styled(Box)`
     height: 56px;
     font-weight: 550;
     margin-top: 16px;
+    color: #fff;
     &:hover {
       background: #347295;
     }

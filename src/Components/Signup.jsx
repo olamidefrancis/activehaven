@@ -1,7 +1,7 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
+  Alert,
   Box,
-  Button,
   FormControl,
   FormControlLabel,
   IconButton,
@@ -12,6 +12,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContainer, TextfieldBox } from '../styles/AuthStyle';
@@ -39,9 +40,11 @@ const Signup = () => {
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
-
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     fetch('http://localhost:3000/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -56,16 +59,30 @@ const Signup = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        setLoading(false);
+        setSuccess(true);
         if (data === 'go') {
-          navigate('/clock');
+          setTimeout(() => {
+            navigate('/clock');
+          }, 2000);
         }
       });
   };
 
   return (
     <AuthContainer>
+      {success && (
+        <Alert
+          severity='success'
+          onClose={() => {
+            setSuccess(false);
+          }}
+        >
+          Successfully Registered
+        </Alert>
+      )}
       <Typography variant='h4' fontWeight={700} align='center' mb={2}>
-        Sign In
+        Sign Up
       </Typography>
 
       <Typography variant='body1' align='center'>
@@ -93,6 +110,8 @@ const Signup = () => {
         <TextField
           variant='outlined'
           fullWidth
+          autoFocus
+          name='name'
           value={values.name}
           onChange={handleChange('name')}
           type='text'
@@ -105,6 +124,7 @@ const Signup = () => {
         <TextField
           variant='outlined'
           fullWidth
+          name='email'
           value={values.email}
           onChange={handleChange('email')}
           type='email'
@@ -117,6 +137,7 @@ const Signup = () => {
         <TextField
           variant='outlined'
           fullWidth
+          name='phone'
           value={values.phone}
           onChange={handleChange('phone')}
           type='email'
@@ -129,6 +150,7 @@ const Signup = () => {
         <TextField
           variant='outlined'
           fullWidth
+          name='age'
           value={values.age}
           onChange={handleChange('age')}
           type='email'
@@ -144,6 +166,7 @@ const Signup = () => {
           <OutlinedInput
             id='outlined-adornment-password'
             type={showPassword ? 'text' : 'password'}
+            name='password'
             value={values.password}
             onChange={handleChange('password')}
             endAdornment={
@@ -167,9 +190,8 @@ const Signup = () => {
         </Typography>
         <FormControl>
           <RadioGroup
-            aria-labelledby='demo-radio-buttons-group-label'
             defaultValue='female'
-            name='radio-buttons-group'
+            name='sex'
             value={values.sex}
             onChange={handleChange('sex')}
           >
@@ -183,9 +205,14 @@ const Signup = () => {
           </RadioGroup>
         </FormControl>
       </Box>
-      <Button variant='contained' fullWidth onClick={handleSubmit}>
-        Sign In
-      </Button>
+      <LoadingButton
+        loading={loading}
+        variant='contained'
+        fullWidth
+        onClick={handleSubmit}
+      >
+        Sign Up
+      </LoadingButton>
     </AuthContainer>
   );
 };

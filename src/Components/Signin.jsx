@@ -1,6 +1,6 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
-  Button,
+  Alert,
   FormControl,
   IconButton,
   InputAdornment,
@@ -8,6 +8,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContainer, TextfieldBox } from '../styles/AuthStyle';
@@ -19,7 +20,8 @@ const Signin = () => {
     password: '',
   });
   const [showPassword, setShowPassword] = React.useState(false);
-
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -33,6 +35,8 @@ const Signin = () => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
     fetch('http://localhost:3000/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -43,53 +47,27 @@ const Signin = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        setLoading(false);
+        setSuccess(true);
         if (data === 'go') {
           navigate('/clock');
+          localStorage.setItem('activeUser', values.email);
         }
       });
   };
 
   return (
-    //         <div>
-    //         <article className='br3 ba shadow-5 b--black-10 mv4 w-100 w-50-m mw5 w-25-1 center'>
-    //           <main className="pa4 black-80">
-    //                 <div className="measure   ">
-    //                         <fieldset id="sign_up" className="ba  white b--transparent ph0 mh0">
-    //                             <legend className="f4  dim white fw6  ph0 mh0 center"> Welcome</legend>
-    //                             <div className="mt3">
-    //                                 <label
-    //                                 className=" dim white fw6 lh-copy f6 center"
-    //                                 htmlFor="email-addre">email</label>
-    //                                 <input
-
-    //                                 className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-    //                                 type="email" name="email-address"  id="emails"
-    //                                 onChange={this.onEmailChange}
-    //                                 />
-    //                             </div>
-    //                             <div className="mv3">
-    //                                 <label className=" dim white fw6 lh-copy f6 center" htmlFor="password">Password</label>
-    //                                 <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-    //                                      type="pas" name="passwordx"  id="passwor"
-    //                                      onChange={this.onPasswordChange}
-    //                                 />
-    //                             </div>
-
-    //                         </fieldset>
-    //                 <div className="center">
-    //                         <input
-
-    //                          onClick={ this.onSubmitsignin}
-    //                         className="b ph3 pv2   white input-reset ba b--gray bg-transparent grow pointer f6 dib"
-    //                         type="submit" value="Sign In"/>
-    //                 </div>
-
-    //              </div>
-    //           </main>
-    //           </article>
-
-    //   </div>
     <AuthContainer>
+      {success && (
+        <Alert
+          severity='success'
+          onClose={() => {
+            setSuccess(false);
+          }}
+        >
+          Login Successful
+        </Alert>
+      )}
       <Typography variant='h4' fontWeight={700} align='center' mb={2}>
         Sign In
       </Typography>
@@ -119,6 +97,8 @@ const Signin = () => {
         <TextField
           variant='outlined'
           fullWidth
+          autoFocus
+          name='email'
           value={values.email}
           onChange={handleChange('email')}
           type='email'
@@ -133,6 +113,7 @@ const Signin = () => {
           <OutlinedInput
             id='outlined-adornment-password'
             type={showPassword ? 'text' : 'password'}
+            name='password'
             value={values.password}
             onChange={handleChange('password')}
             endAdornment={
@@ -150,9 +131,14 @@ const Signin = () => {
           />
         </FormControl>
       </TextfieldBox>
-      <Button variant='contained' fullWidth onClick={handleSubmit}>
+      <LoadingButton
+        variant='contained'
+        loading={loading}
+        fullWidth
+        onClick={handleSubmit}
+      >
         Sign In
-      </Button>
+      </LoadingButton>
     </AuthContainer>
   );
 };
