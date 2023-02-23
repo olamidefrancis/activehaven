@@ -7,12 +7,12 @@ import { BannerBox, BannerContainer } from '../../styles/HomeStyle';
 const Content = () => {
   return (
     <BannerBox>
-      <Box width='60%'>
+      <Box width={{ xs: '95%', sm: '60%' }}>
         <Typography variant='h2' color='white' mb={2.4}>
           Personal Assistance
           <br /> with various disability.
         </Typography>
-        <Box width='50%'>
+        <Box width={{ sm: '80%', md: '50%' }}>
           {' '}
           <Typography variant='body1' color='white' mb={2}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -34,6 +34,16 @@ const BannerContent = () => {
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
   };
   return (
     <BannerContainer>
@@ -48,7 +58,6 @@ const BannerContent = () => {
         customTransition='all .5'
         transitionDuration={500}
         containerClass='carousel-container'
-        removeArrowOnDeviceType={['tablet', 'mobile']}
       >
         <Content />
         <Content />

@@ -56,13 +56,16 @@ const BannerContainer = styled(Box)`
       }
     }
   }
+  @media (max-width: 600px) {
+    height: 60vh;
+  }
 `;
 
 const BannerBox = styled(Box)`
   width: 100%;
   height: 100%;
-  padding-bottom: 28px;
-  padding-left: 120px;
+  padding-bottom: 36px;
+  padding-left: 16px;
   background: url('/banner1.png'), #ffffff;
   //   background-color: rgba(52, 114, 149, 0.5);
   background-size: 100% 100%;
@@ -74,12 +77,23 @@ const BannerBox = styled(Box)`
   }
   .MuiTypography-h2 {
     font-weight: 700;
+    font-size: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 60px;
+    .MuiTypography-h2 {
+      font-size: 2.5rem;
+    }
+  }
+  @media (min-width: 1100px) {
+    padding-left: 120px;
   }
 `;
 
 const AboutContainer = styled(Box)`
   width: 100%;
-  padding-top: 6rem;
+  padding: 4rem 1rem;
   .MuiGrid-root {
     align-items: center;
     .MuiGrid-item {
@@ -115,6 +129,7 @@ const FooterContainer = styled(Box)`
   width: 100%;
   height: auto;
   background: #347295;
+  padding: 4rem 1rem 2rem;
   .MuiGrid-root {
     .MuiGrid-item {
       .MuiBox-root {

@@ -2,15 +2,16 @@ import './App.css';
 import React, { Component } from 'react';
 import Navigation from './Components/Navigation/Navigation';
 import Application from './Components/Application/Application';
-import Slide from './Components/Slide/Slide';
+// import Slide from './Components/Slide/Slide';
 import Contacts from './Components/Contacts/Contacts';
 import Clock from './Components/Clock/Clock';
-import Signin from './Components/Signin/Signin';
+import Signin from './Components/Signin';
 import Register from './Components/Register/Register';
 import Form from './Components/Form/Form';
 import 'tachyons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
+import Signup from './Components/Signup';
 
 class App extends Component {
   constructor() {
@@ -34,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        {this.state.route === 'home' ? (
+        {/* {this.state.route === 'home' ? (
           <div>
             <Navigation onRouteChange={this.onRouteChange} />
             <Slide />
@@ -52,11 +53,13 @@ class App extends Component {
           <Clock onRouteChange={this.onRouteChange} />
         ) : (
           (this.setState = { route: 'home' })
-        )}
+        )} */}
 
         <Router>
           <Routes>
-            <Route path='/home' element={<Home />} />
+            <Route path='home' element={<Home />} />
+            <Route path='signin' element={<Signin />} />
+            <Route path='signup' element={<Signup />} />
           </Routes>
         </Router>
       </div>
