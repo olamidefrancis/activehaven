@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 import { BannerBox, BannerContainer } from '../../styles/HomeStyle';
 
 const Content = () => {
@@ -19,9 +20,12 @@ const Content = () => {
             industry. Lorem Ipsum has been the Lorem Ipsum is simply
           </Typography>
         </Box>
-        <Button variant='contained' color='primary'>
-          Apply for Suport
-        </Button>
+        <Link to='/support'>
+          {' '}
+          <Button variant='contained' color='primary'>
+            Apply for Suport
+          </Button>
+        </Link>
       </Box>
     </BannerBox>
   );

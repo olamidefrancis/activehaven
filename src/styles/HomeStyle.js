@@ -75,6 +75,9 @@ const BannerBox = styled(Box)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  a {
+    text-decoration: none;
+  }
   .MuiTypography-root {
     font-family: 'Inter', sans-serif;
   }

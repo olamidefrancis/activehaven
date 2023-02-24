@@ -1,5 +1,5 @@
 import { Box, Button, Chip, Grid, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ClockContainer,
@@ -13,8 +13,8 @@ const Clock = () => {
   const [clientCheck, setClientCheck] = useState(false);
   const [client, setClient] = useState('');
   const [state, setState] = useState({
-    start: '',
-    end: '',
+    start: 0,
+    end: 0,
     diff: 0,
     hours: '',
   });
@@ -36,19 +36,24 @@ const Clock = () => {
     const start1 = new Date();
     const start2 = start1.getTime();
     const start3 = start2 / 1000 / 60;
-
-    setState({ start: start3 });
+    // set state of start to start3 on first click
+    setState({ ...state, start: start3 });
+    console.log(state);
   };
+
   const endclock = () => {
     const end1 = new Date();
     const end2 = end1.getTime();
     const end3 = end2 / 1000 / 60;
 
-    setState({ end: end3 });
-    const diff1 = this.state.start;
+    const diff1 = state.start;
     const diff2 = end3 - diff1;
-    setState({ diff: diff2 });
+    setState({ ...state, diff: diff2, end: end3 });
   };
+
+  useEffect(() => {
+    // console.log(state);
+  }, [state]);
 
   const handleClientChange = (event) => {
     setClient(event.target.value);
@@ -131,8 +136,12 @@ const Clock = () => {
               color='primary'
               size='medium'
               onClick={() => {
-                setClientCheck(true);
-                localStorage.setItem('client', true);
+                if (client === '') {
+                  alert('Please enter a client name');
+                } else {
+                  setClientCheck(true);
+                  localStorage.setItem('client', true);
+                }
               }}
             >
               Submit
@@ -142,10 +151,10 @@ const Clock = () => {
       ) : (
         <Box>
           <ClockTopbar>
-            <Button variant='outlined' onClick={() => regStart()}>
+            <Button variant='outlined' onClick={regStart}>
               START
             </Button>
-            <Button variant='contained' onClick={() => endclock()}>
+            <Button variant='contained' onClick={endclock}>
               END
             </Button>
           </ClockTopbar>
