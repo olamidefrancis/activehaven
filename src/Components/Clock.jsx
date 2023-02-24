@@ -38,7 +38,6 @@ const Clock = () => {
     const start3 = start2 / 1000 / 60;
     // set state of start to start3 on first click
     setState({ ...state, start: start3 });
-    console.log(state);
   };
 
   const endclock = () => {
