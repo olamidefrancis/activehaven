@@ -38,6 +38,7 @@ const Clock = () => {
     const start3 = start2 / 1000 / 60;
     // set state of start to start3 on first click
     setState({ ...state, start: start3 });
+    return start3;
   };
 
   const endclock = () => {
@@ -48,6 +49,7 @@ const Clock = () => {
     const diff1 = state.start;
     const diff2 = end3 - diff1;
     setState({ ...state, diff: diff2, end: end3 });
+    return end3;
   };
 
   useEffect(() => {
@@ -59,13 +61,12 @@ const Clock = () => {
   };
 
   const regStart = () => {
-    startclock();
     setTimeout(() => {
       fetch('http://localhost:3000/startshift', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          start: state.start,
+          start: startclock(),
           client: client,
           end: state.end,
         }),
@@ -84,7 +85,7 @@ const Clock = () => {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        end: state.end,
+        end: endclock(),
         rep1: report.rep1,
         rep2: report.rep2,
         rep3: report.rep3,
@@ -157,7 +158,6 @@ const Clock = () => {
               END
             </Button>
           </ClockTopbar>
-
           <Box display='flex' mt={4} mb={1} pl={2} columnGap={1}>
             {' '}
             <Typography variant='h6'>Your work hour is:</Typography>
