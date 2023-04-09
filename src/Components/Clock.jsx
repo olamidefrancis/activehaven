@@ -86,6 +86,8 @@ const Clock = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         end: endclock(),
+        client: client,
+        staffEmail: localStorage.getItem('activeUser'),
         rep1: report.rep1,
         rep2: report.rep2,
         rep3: report.rep3,

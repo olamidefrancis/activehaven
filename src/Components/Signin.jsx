@@ -102,6 +102,8 @@ const Signin = () => {
           value={values.email}
           onChange={handleChange('email')}
           type='email'
+          required
+          error={values.email === ''}
         />
       </TextfieldBox>
       <TextfieldBox>
@@ -116,6 +118,8 @@ const Signin = () => {
             name='password'
             value={values.password}
             onChange={handleChange('password')}
+            required
+            error={values.password === ''}
             endAdornment={
               <InputAdornment position='end'>
                 <IconButton
