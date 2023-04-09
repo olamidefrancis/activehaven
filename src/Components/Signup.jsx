@@ -45,7 +45,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch('http://localhost:3000/register', {
+    fetch('http://localhost:3001/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -63,10 +63,11 @@ const Signup = () => {
         setSuccess(true);
         if (data === 'go') {
           setTimeout(() => {
-            navigate('/clock');
+            navigate('/');
           }, 2000);
         }
-      });
+      })
+      .catch(console.log)
   };
 
   return (

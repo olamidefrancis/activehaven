@@ -69,10 +69,12 @@ const Home = () => {
           What we do?
         </Typography>
         <Typography variant='body1' align='center'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's staorem Ipsum is simply
-          dummy text of the printing and typesetting industry. Lorem as been the
-          industry's standard dummy text ever since the 150 printer took a
+        Specialist and tailored support for Autism Spectrum, ADHD,Down Syndrome.
+        Personal Asistance with various diadility.
+        SEN Recruitment, Professional Training abd Support.
+        Tuition: Special Education Need and Learning Disability.
+        Dementia Support.
+        Palliativee Care and Support.
         </Typography>
       </WhatweDoContainer>
       <FooterContainer>
@@ -101,8 +103,7 @@ const Home = () => {
             <Box display='flex' columnGap={2} mb={2}>
               <LocationOnIcon />
               <Typography variant='body1'>
-                110 Ducks Hill Road, Northwood, Northwood, HA6 2XU, United
-                Kingdom
+                Suite F8 Hartsbourne House, Carpenders Park, Watford WD19 5EF
               </Typography>
             </Box>
             <Box display='flex' columnGap={2} mb={2}>

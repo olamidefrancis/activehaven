@@ -35,7 +35,7 @@ const Clock = () => {
   const startclock = () => {
     const start1 = new Date();
     const start2 = start1.getTime();
-    const start3 = start2 / 1000 / 60;
+    const start3 = start2 / 1000 / 60/60;
     // set state of start to start3 on first click
     setState({ ...state, start: start3 });
     return start3;
@@ -44,7 +44,7 @@ const Clock = () => {
   const endclock = () => {
     const end1 = new Date();
     const end2 = end1.getTime();
-    const end3 = end2 / 1000 / 60;
+    const end3 = end2 / 1000 / 60/60;
 
     const diff1 = state.start;
     const diff2 = end3 - diff1;
@@ -61,8 +61,8 @@ const Clock = () => {
   };
 
   const regStart = () => {
-    setTimeout(() => {
-      fetch('http://localhost:3000/startshift', {
+    
+      fetch('http://localhost:3001/startshift', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -76,12 +76,12 @@ const Clock = () => {
           if (user === 'good') {
             navigate('/');
           }
-        });
-    }, 2000);
+        })
+        .catch(console.log)
   };
 
   const regEnd = () => {
-    fetch('http://localhost:3000/endshift', {
+    fetch('http://localhost:3001/endshift', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -96,22 +96,25 @@ const Clock = () => {
       .then((response) => response.json())
       .then((user) => {
         if (user) {
-          setState({ hours: user[0].entime - user[0].starttime });
+          
+          setState({ hours: user })
           setTimeout(() => {
             //if this works,male a call to the database
-
-            fetch('http://localhost:3000/shifthours', {
+            //checking if state is saved
+            console.log(user)
+            fetch('http://localhost:3001/shifthours', {
               method: 'post',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                hours: state.hours,
+                hours: user,
               }),
             });
             //then take us back to home page
             navigate('/');
           }, 2000);
         }
-      });
+      })
+      .catch(console.log)
   };
 
   const isClient = localStorage.getItem('client');
@@ -154,7 +157,7 @@ const Clock = () => {
             <Button variant='outlined' onClick={regStart}>
               START
             </Button>
-            <Button variant='contained' onClick={endclock}>
+            <Button variant='contained' >
               END
             </Button>
           </ClockTopbar>
