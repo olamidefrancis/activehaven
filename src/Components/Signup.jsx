@@ -193,7 +193,7 @@ const Signup = () => {
         <Typography variant='body1' fontWeight={500} mb={1}>
           Gender
         </Typography>
-        <FormControl>
+        <FormControl required>
           <RadioGroup
             defaultValue='female'
             name='sex'
