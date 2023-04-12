@@ -104,7 +104,7 @@ const Signin = () => {
           onChange={handleChange('email')}
           type='email'
           required
-          error={values.email === ''}
+          // show error when field has been touched and is empty
         />
       </TextfieldBox>
       <TextfieldBox>
@@ -120,7 +120,6 @@ const Signin = () => {
             value={values.password}
             onChange={handleChange('password')}
             required
-            error={values.password === ''}
             endAdornment={
               <InputAdornment position='end'>
                 <IconButton
