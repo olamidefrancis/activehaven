@@ -16,8 +16,7 @@ const Content = () => {
         <Box width={{ sm: '80%', md: '50%' }}>
           {' '}
           <Typography variant='body1' color='white' mb={2}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the Lorem Ipsum is simply
+          INSPIRE Z ASPIRE
           </Typography>
         </Box>
         <Link to='/support'>

@@ -51,9 +51,7 @@ const Home = () => {
                 text ever since the 1500s, when an unknown printer took a
               </Typography>
               <Typography variant='body1'>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a
+               Seeking for job? Send CV with cover letter to adebayobright.ab@gmail.com 
               </Typography>
             </Box>
           </Grid>
