@@ -45,7 +45,7 @@ const Signin = () => {
       }),
     })
       .then((response) => {
-        response.json();
+      
         setLoading(false);
         if (response.data === 'go') {
           toast.success('Login Successful');

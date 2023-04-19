@@ -57,19 +57,16 @@ const Signup = () => {
       }),
     })
       .then((response) => {
-        response.json();
         if (response.data === 'go') {
           toast.success('Signup Successful');
           setTimeout(() => {
             navigate('/');
           }, 2000);
-        } else
-        if (response.status !== 200) {
+        } else if (response.status !== 200) {
           toast.error('Signup Failed');
         }
       })
 
-    
       .catch(console.log);
   };
 
