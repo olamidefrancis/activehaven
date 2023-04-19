@@ -3,11 +3,15 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
+import banner1 from "../../assets/banner1.jpg";
+import banner2 from "../../assets/banner2.jpg";
+import banner3 from "../../assets/banner3.jpg";
+import banner4 from "../../assets/banner4.jpg";
 import { BannerBox, BannerContainer } from '../../styles/HomeStyle';
 
-const Content = () => {
+const Content = ({banner}) => {
   return (
-    <BannerBox>
+    <BannerBox img={banner}>
       <Box width={{ xs: '95%', sm: '60%' }}>
         <Typography variant='h2' color='white' mb={2.4}>
           Personal Assistance
@@ -57,16 +61,17 @@ const BannerContent = () => {
         autoPlay={true}
         autoPlaySpeed={3000}
         showDots={true}
+        infinite={true}
         keyBoardControl={true}
         customTransition='all .5'
         transitionDuration={500}
         containerClass='carousel-container'
       >
-        <Content />
-        <Content />
-        <Content />
-        <Content />
-        <Content />
+        <Content banner={banner1} />
+        <Content banner={banner2} />
+        <Content banner={banner3} />
+        <Content banner={banner4} />
+      
       </Carousel>
     </BannerContainer>
   );

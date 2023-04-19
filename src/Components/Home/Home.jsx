@@ -6,7 +6,7 @@ import {
   TopBar,
   WhatweDoContainer,
 } from '../../styles/HomeStyle';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/ActiveHaven .png';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';

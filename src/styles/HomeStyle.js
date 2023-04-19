@@ -67,9 +67,9 @@ const BannerContainer = styled(Box)`
 const BannerBox = styled(Box)`
   width: 100%;
   height: 100%;
-  padding-bottom: 36px;
+  padding-bottom: 64px;
   padding-left: 16px;
-  background: url('/banner1.png'), #ffffff;
+  background: ${({ img }) => `url(${img})`};
   //   background-color: rgba(52, 114, 149, 0.5);
   background-size: 100% 100%;
   display: flex;
