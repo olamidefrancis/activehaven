@@ -1,6 +1,5 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
-  Alert,
   Box,
   FormControl,
   FormControlLabel,
@@ -16,6 +15,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContainer, TextfieldBox } from '../styles/AuthStyle';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -41,7 +41,6 @@ const Signup = () => {
     setValues({ ...values, [prop]: event.target.value });
   };
   const [loading, setLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -57,10 +56,14 @@ const Signup = () => {
         sex: values.sex,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {response.json()
+       if (response.status === 200) {
+         toast.success('Signup Successful');
+       } else {
+         toast.error('Signup Failed');
+       }})
       .then((data) => {
         setLoading(false);
-        setSuccess(true);
         if (data === 'go') {
           setTimeout(() => {
             navigate('/');
@@ -72,16 +75,7 @@ const Signup = () => {
 
   return (
     <AuthContainer>
-      {success && (
-        <Alert
-          severity='success'
-          onClose={() => {
-            setSuccess(false);
-          }}
-        >
-          Successfully Registered
-        </Alert>
-      )}
+     
       <Typography variant='h4' fontWeight={700} align='center' mb={2}>
         Sign Up
       </Typography>

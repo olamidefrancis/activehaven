@@ -1,6 +1,5 @@
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
-  Alert,
   FormControl,
   IconButton,
   InputAdornment,
@@ -12,6 +11,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContainer, TextfieldBox } from '../styles/AuthStyle';
+import { toast } from 'react-toastify';
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -21,7 +21,6 @@ const Signin = () => {
   });
   const [showPassword, setShowPassword] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -45,30 +44,29 @@ const Signin = () => {
         password: values.password,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then((response) => {
+        response.json();
         setLoading(false);
-        setSuccess(true);
+        if (response.status === 200) {
+          toast.success('Login Successful');
+        } else if (response.status === 400) {
+          toast.error('Wrong Credentials');
+        } else {
+          toast.error('Login Failed');
+        }
+      })
+      .then((data) => {
         if (data === 'go') {
           navigate('/clock');
           localStorage.setItem('activeUser', values.email);
         }
       })
-      .catch(err=>console.log)
-      ;
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <AuthContainer>
-      {success && (
-        <Alert
-          severity='success'
-          onClose={() => {
-            setSuccess(false);
-          }}
-        >
-          Login Successful
-        </Alert>
-      )}
       <Typography variant='h4' fontWeight={700} align='center' mb={2}>
         Sign In
       </Typography>

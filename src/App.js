@@ -8,6 +8,8 @@ import 'tachyons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Signup from './Components/Signup';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
   constructor() {
@@ -36,6 +38,7 @@ class App extends Component {
             <Route path='support' element={<Form />} />
           </Routes>
         </Router>
+        <ToastContainer />
       </div>
     );
   }
