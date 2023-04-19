@@ -45,24 +45,23 @@ const Signin = () => {
       }),
     })
       .then((response) => {
-        response.json();
+      
         setLoading(false);
-        if (response.status === 200) {
+        if (response.data === 'go') {
           toast.success('Login Successful');
-        } else if (response.status === 400) {
-          toast.error('Wrong Credentials');
-        } else {
-          toast.error('Login Failed');
-        }
-      })
-      .then((data) => {
-        console.log(data);
-        if (data === 'go') {
-          
-          navigate('/clock');
           localStorage.setItem('activeUser', values.email);
+          setTimeout(() => {
+            navigate('/clock');
+          }, 2000);
+        } else {
+          if (response.status === 400) {
+            toast.error('Wrong Credentials');
+          } else {
+            toast.error('Login Failed');
+          }
         }
       })
+
       .catch((err) => {
         console.log(err);
       });
