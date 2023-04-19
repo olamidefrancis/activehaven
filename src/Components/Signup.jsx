@@ -56,25 +56,25 @@ const Signup = () => {
         sex: values.sex,
       }),
     })
-      .then((response) => {response.json()
-       if (response.status !== 200) {
-         toast.error('Signup Failed');
-       }})
-      .then((data) => {
-        setLoading(false);
-         toast.success('Signup Successful');
-        if (data === 'go') {
+      .then((response) => {
+        response.json();
+        if (response.data === 'go') {
+          toast.success('Signup Successful');
           setTimeout(() => {
             navigate('/');
           }, 2000);
+        } else
+        if (response.status !== 200) {
+          toast.error('Signup Failed');
         }
       })
-      .catch(console.log)
+
+    
+      .catch(console.log);
   };
 
   return (
     <AuthContainer>
-     
       <Typography variant='h4' fontWeight={700} align='center' mb={2}>
         Sign Up
       </Typography>
