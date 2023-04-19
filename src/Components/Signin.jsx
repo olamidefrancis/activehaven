@@ -47,9 +47,7 @@ const Signin = () => {
       .then((response) => {
         response.json();
         setLoading(false);
-        if (response.status === 200) {
-          toast.success('Login Successful');
-        } else if (response.status === 400) {
+      if (response.status === 400) {
           toast.error('Wrong Credentials');
         } else {
           toast.error('Login Failed');
@@ -57,6 +55,7 @@ const Signin = () => {
       })
       .then((data) => {
         if (data === 'go') {
+          toast.success('Login Successful');
           navigate('/clock');
           localStorage.setItem('activeUser', values.email);
         }
