@@ -21,7 +21,7 @@ class App extends Component {
 
   //connecting with server
   componentDidMount() {
-    fetch('http://localhost:3001/')
+    fetch('https://activehavent.herokuapp.com/')
       .then((response) => response.json())
       .then(console.log);
   }
@@ -31,11 +31,11 @@ class App extends Component {
       <div className='App'>
         <Router>
           <Routes>
-            <Route path='/' index exact element={<Home />} />
-            <Route path='signin' element={<Signin />} />
-            <Route path='signup' element={<Signup />} />
-            <Route path='clock' element={<Clock />} />
-            <Route path='support' element={<Form />} />
+            <Route path='activehavent.herokuapp.com/' index exact element={<Home />} />
+            <Route path='activehavent.herokuapp.com/signin' element={<Signin />} />
+            <Route path='activehavent.herokuapp.com/signup' element={<Signup />} />
+            <Route path='activehavent.herokuapp.com/clock' element={<Clock />} />
+            <Route path='activehavent.herokuapp.com/support' element={<Form />} />
           </Routes>
         </Router>
         <ToastContainer />

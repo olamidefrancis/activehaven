@@ -36,7 +36,7 @@ const Signin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch('http://localhost:3001/signin', {
+    fetch('https://activehavent.herokuapp.com/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -44,10 +44,11 @@ const Signin = () => {
         password: values.password,
       }),
     })
+    .then((response) => response.json())
       .then((response) => {
-      
+       console.log(response)
         setLoading(false);
-        if (response.data === 'go') {
+        if (response === 'go') {
           toast.success('Login Successful');
           localStorage.setItem('activeUser', values.email);
           setTimeout(() => {

@@ -44,7 +44,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch('http://localhost:3001/register', {
+    fetch('https://activehavent.herokuapp.com/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -56,6 +56,7 @@ const Signup = () => {
         sex: values.sex,
       }),
     })
+    .then((response) => response.json())
       .then((response) => {
         if (response.data === 'go') {
           toast.success('Signup Successful');
