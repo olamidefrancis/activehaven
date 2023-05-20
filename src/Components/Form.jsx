@@ -40,7 +40,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch('https://activehavent.herokuapp.com/clients', {
+    fetch('http://localhost:3001/clients', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

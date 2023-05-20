@@ -44,7 +44,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch('https://activehavent.herokuapp.com/register', {
+    fetch('http://localhost:3001/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
