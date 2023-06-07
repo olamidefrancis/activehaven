@@ -21,7 +21,7 @@ class App extends Component {
 
   //connecting with server
   componentDidMount() {
-    fetch('http://localhost:3000/')
+    fetch('https://activehavent.herokuapp.com/')
       .then((response) => response.json())
       .then(console.log);
   }

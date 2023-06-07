@@ -62,7 +62,7 @@ const Clock = () => {
 
   const regStart = () => {
     
-      fetch('http://localhost:3001/startshift', {
+      fetch('https://activehavent.herokuapp.com/startshift', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -81,7 +81,7 @@ const Clock = () => {
   };
 
   const regEnd = () => {
-    fetch('http://localhost:3001/endshift', {
+    fetch('https://activehavent.herokuapp.com/endshift', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -104,7 +104,7 @@ const Clock = () => {
             //if this works,male a call to the database
             //checking if state is saved
             console.log(user)
-            fetch('http://localhost:3001/shifthours', {
+            fetch('https://activehavent.herokuapp.com/shifthours', {
               method: 'post',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
