@@ -59,7 +59,8 @@ const Form = () => {
     })
       .then((response) => response.json())
       .then((user) => {
-        if (user) {
+        console.log(user)
+        if (user.length >1) {
           setLoading(false);
           setSuccess(true);
           navigate('/');

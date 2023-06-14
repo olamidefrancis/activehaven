@@ -58,6 +58,7 @@ const Signup = () => {
     })
     .then((response) => response.json())
       .then((response) => {
+        console.log(response)
         if (response.data === 'go') {
           toast.success('Signup Successful');
           setTimeout(() => {
