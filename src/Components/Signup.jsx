@@ -59,7 +59,7 @@ const Signup = () => {
     .then((response) => response.json())
       .then((response) => {
         console.log(response)
-        if (response.data === 'go') {
+        if (response === 'go') {
           toast.success('Signup Successful');
           setTimeout(() => {
             navigate('/');
