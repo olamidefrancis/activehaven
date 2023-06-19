@@ -47,7 +47,7 @@ const Home = () => {
                Specialist and tailored support for Autism Spectrum, ADHD,Down Syndrome.
                Personal Asistance with various diadilities.
                SEN Recruitment, Professional Training abd Support.
-               Tuition: Special Education Need and Learning Disability.
+               Tuition: Special Education Need and Learning Disabilities.
                Dementia Support.
                Palliativee Care and Support.
               </Typography>
