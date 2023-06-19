@@ -40,19 +40,18 @@ const Home = () => {
           <Grid item xs={12} md={6}>
             <Box>
               <Typography variant='h4' mb={2}>
-                About Company
+               What we do?
               </Typography>
-              <Typography variant='h6' mb={2}>
-                ActiveHaven UK Limited
+              
+              <Typography variant='body1' align='center'>
+               Specialist and tailored support for Autism Spectrum, ADHD,Down Syndrome.
+               Personal Asistance with various diadility.
+               SEN Recruitment, Professional Training abd Support.
+               Tuition: Special Education Need and Learning Disability.
+               Dementia Support.
+                 Palliativee Care and Support.
               </Typography>
-              <Typography variant='body1' mb={2}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a
-              </Typography>
-              <Typography variant='body1'>
-               Seeking for job? Send CV with cover letter to adebayobright.ab@gmail.com 
-              </Typography>
+             
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -64,16 +63,23 @@ const Home = () => {
       </AboutContainer>
       <WhatweDoContainer width='100%' bgcolor='white'>
         <Typography variant='h4' mb={2} align='center'>
-          What we do?
+          About Company
         </Typography>
-        <Typography variant='body1' align='center'>
-        Specialist and tailored support for Autism Spectrum, ADHD,Down Syndrome.
-        Personal Asistance with various diadility.
-        SEN Recruitment, Professional Training abd Support.
-        Tuition: Special Education Need and Learning Disability.
-        Dementia Support.
-        Palliativee Care and Support.
-        </Typography>
+        <Typography variant='h6' mb={2}>
+                ActiveHaven UK Limited
+              </Typography>
+       
+
+        <Typography variant='body1' mb={2}>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a
+              </Typography>
+              <Typography variant='body1'>
+               Seeking for job? Send CV with cover letter to adebayobright.ab@gmail.com 
+              </Typography>
+
+
       </WhatweDoContainer>
       <FooterContainer>
         <Grid container spacing={2} justifyContent='space-between'>
