@@ -39,7 +39,7 @@ const Home = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Box>
-              <Typography variant='h4' mb={2}>
+              <Typography variant='h4' mb={2} align='center'>
                What we do?
               </Typography>
               
@@ -49,7 +49,7 @@ const Home = () => {
                SEN Recruitment, Professional Training abd Support.
                Tuition: Special Education Need and Learning Disability.
                Dementia Support.
-                 Palliativee Care and Support.
+               Palliativee Care and Support.
               </Typography>
              
             </Box>
