@@ -142,7 +142,7 @@ const Form = () => {
         </Box>
         <Box>
           <Typography variant='body1' fontWeight={500} my={1}>
-            Name of ward
+            Name of service user
           </Typography>
           <TextField
             variant='outlined'
@@ -154,7 +154,7 @@ const Form = () => {
         </Box>
         <Box>
           <Typography variant='body1' fontWeight={500} my={1}>
-            Age of ward
+            Age of service user
           </Typography>
           <TextField
             variant='outlined'
