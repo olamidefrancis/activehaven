@@ -15,7 +15,7 @@ const Content = ({banner}) => {
       <Box width={{ xs: '95%', sm: '60%' }}>
         <Typography variant='h2' color='white' mb={2.4}>
           Personal Assistance
-          <br /> with various disability.
+          <br /> with various disabilities.
         </Typography>
         <Box width={{ sm: '80%', md: '50%' }}>
           {' '}
