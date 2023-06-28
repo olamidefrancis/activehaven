@@ -45,11 +45,11 @@ const Home = () => {
               
               <Typography variant='body1' align='center'>
                Specialist and tailored support for Autism Spectrum, ADHD,Down Syndrome.
-               Personal Asistance with various diadilities.
-               SEN Recruitment, Professional Training abd Support.
+               Personal Asistance with various disabilities.
+               SEN Recruitment, Professional Training and Support.
                Tuition: Special Education Need and Learning Disabilities.
                Dementia Support.
-               Palliativee Care and Support.
+               Palliative Care and Support.
               </Typography>
              
             </Box>

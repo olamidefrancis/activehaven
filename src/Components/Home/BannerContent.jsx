@@ -20,7 +20,7 @@ const Content = ({banner}) => {
         <Box width={{ sm: '80%', md: '50%' }}>
           {' '}
           <Typography variant='body1' color='white' mb={2}>
-          INSPIRE Z ASPIRE
+          INSPIRE 2 ASPIRE
           </Typography>
         </Box>
         <Link to='/support'>
