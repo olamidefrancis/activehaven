@@ -66,14 +66,17 @@ const Home = () => {
           About Company
         </Typography>
         <Typography variant='h6' mb={2}>
-                ActiveHaven UK Limited
+                ACTIVEHAVEN UK Limited
               </Typography>
        
 
         <Typography variant='body1' mb={2}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a
+        We are a group of professionals with over twenty years of experience working, 
+        supporting, tutoring, mentoring, and attending to psychological and physical 
+        challenges and disabilities. We understand each individual is unique, 
+        hence providing tailored support services to meet individual needs.
+
+
               </Typography>
               <Typography variant='body1'>
                Seeking for job? Send CV with cover letter to adebayobright.ab@gmail.com 
