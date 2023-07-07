@@ -79,7 +79,7 @@ const Home = () => {
 
               </Typography>
               <Typography variant='body1'>
-               Seeking for job? Send CV with cover letter to adebayobright.ab@gmail.com 
+               Seeking for job? Send CV with cover letter to adebright@activehaven.co.uk 
               </Typography>
 
 
@@ -92,8 +92,8 @@ const Home = () => {
                 Get in touch
               </Typography>
               <Typography variant='body1' mb={2}>
-                We look forward to hearing from you. Have a issue you’re looking
-                to discuss or question? Let us know the details and we’ll get
+                We look forward to hearing from you. Have an issue you are looking
+                to discuss or question? Let us know the details and we will get
                 back to you within 24 hours.{' '}
               </Typography>
             </Box>
@@ -101,7 +101,7 @@ const Home = () => {
           <Grid item xs={12} md={6}>
             <Box display='flex' columnGap={2} mb={2}>
               <PhoneInTalkIcon />
-              <Typography variant='body1'>+447403968952</Typography>
+              <Typography variant='body1'>00 1923 729 708</Typography>
             </Box>
             <Box display='flex' columnGap={2} mb={2}>
               <CalendarMonthIcon />
@@ -116,7 +116,7 @@ const Home = () => {
             <Box display='flex' columnGap={2} mb={2}>
               <EmailIcon />
               <Typography variant='body1'>
-                Adebright@activehaven.co.uk
+                adebright@activehaven.co.uk
               </Typography>
             </Box>
           </Grid>
