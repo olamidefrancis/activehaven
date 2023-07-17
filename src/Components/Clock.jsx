@@ -161,9 +161,7 @@ const Clock = () => {
             <Button variant='outlined' onClick={regStart}>
               START
             </Button>
-            <Button variant='contained' >
-              END
-            </Button>
+          
           </ClockTopbar>
           <Box display='flex' mt={4} mb={1} pl={2} columnGap={1}>
             {' '}
