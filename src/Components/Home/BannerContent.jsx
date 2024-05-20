@@ -26,7 +26,7 @@ const Content = ({banner}) => {
         <Link to='/support'>
           {' '}
           <Button variant='contained' color='primary'>
-            Apply for Suport
+            Apply for Support
           </Button>
         </Link>
       </Box>
